@@ -1,7 +1,29 @@
+<div class="grid">
+  <div class="col-12 lg:col-3 md:col-6">
+    <app-card-minimal-detail [options]="optionItem1"></app-card-minimal-detail>
+  </div>
+  <div class="col-12 lg:col-3 md:col-6">
+    <app-card-minimal-detail [options]="optionItem2"></app-card-minimal-detail>
+  </div>
+  <div class="col-12 lg:col-3 md:col-6">
+    <app-card-minimal-detail [options]="optionItem3"></app-card-minimal-detail>
+  </div>
+  <div class="col-12 lg:col-3 md:col-6">
+    <app-card-minimal-detail [options]="optionItem4"></app-card-minimal-detail>
+  </div>
+</div>
+
 <div class="col-12 lg:col-4 md:col-6">
   <p-accordion [activeIndex]="0">
     <p-accordionTab header="Header I">
-      <canvas id="MyChart"> {{ chart() }} </canvas>
+      <p-chart type="bar" [data]="loadBarData" [options]="loadBarOptions" />
+    </p-accordionTab>
+  </p-accordion>
+</div>
+<div class="col-12 lg:col-4 md:col-6">
+  <p-accordion [activeIndex]="0">
+    <p-accordionTab header="Header I">
+      <p-chart type="bar" [data]="loadBar2Data" [options]="loadBar2Options" />
     </p-accordionTab>
   </p-accordion>
 </div>

@@ -1,0 +1,20 @@
+::ng-deep {
+  .p-panel-header {
+    border-left: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    padding: 0;
+    background: white;
+    color: #374151;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+  }
+
+  .p-card-body {
+    padding: 0 1.25rem;
+  }
+  .pi-rounded-opacity {
+    padding: 0.85rem;
+    border-radius: 1.5rem;
+  }
+}
