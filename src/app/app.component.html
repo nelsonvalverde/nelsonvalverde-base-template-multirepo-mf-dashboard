@@ -11,19 +11,26 @@
   <div class="col-12 lg:col-3 md:col-6">
     <app-card-minimal-detail [options]="optionItem4"></app-card-minimal-detail>
   </div>
-</div>
-
-<div class="col-12 lg:col-4 md:col-6">
-  <p-accordion [activeIndex]="0">
-    <p-accordionTab header="Header I">
-      <p-chart type="bar" [data]="loadBarData" [options]="loadBarOptions" />
-    </p-accordionTab>
-  </p-accordion>
-</div>
-<div class="col-12 lg:col-4 md:col-6">
-  <p-accordion [activeIndex]="0">
-    <p-accordionTab header="Header I">
-      <p-chart type="bar" [data]="loadBar2Data" [options]="loadBar2Options" />
-    </p-accordionTab>
-  </p-accordion>
+  <div class="col-12 lg:col-9">
+    <p-accordion [activeIndex]="0">
+      <p-accordionTab header="Header I">
+        <p-chart type="line" [data]="loadBarData" [options]="loadBarOptions" />
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+  <div class="col-12 lg:col-3">
+    <p-accordion [activeIndex]="0">
+      <p-accordionTab header="Header I">
+        <p-chart type="pie" [data]="loadPieData" [options]="loadPieOptions" />
+      </p-accordionTab>
+    </p-accordion>
+    <p-accordion [activeIndex]="0">
+      <p-accordionTab header="Header I">
+        <p-chart type="pie" [data]="loadPieData" [options]="loadPieOptions" />
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+  <div class="col-12">
+    <app-table></app-table>
+  </div>
 </div>

@@ -5,10 +5,11 @@ import { PanelModule } from 'primeng/panel';
 import { MenuModule } from 'primeng/menu';
 import { CardMinimalDetailComponent } from "./components/card-minimal-detail/card-minimal-detail.component";
 import { CardMinimalDetailInterface } from './components/card-minimal-detail/card.minimal-detail.interface';
+import { TableComponent } from "./components/table/table.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AccordionModule, ChartModule, PanelModule, MenuModule, CardMinimalDetailComponent],
+  imports: [AccordionModule, ChartModule, PanelModule, MenuModule, CardMinimalDetailComponent, TableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -18,12 +19,12 @@ export class AppComponent implements OnInit {
   loadBarData: any;
   loadBarOptions: any;
 
-  loadBar2Data: any;
-  loadBar2Options: any;
+  loadPieData: any;
+  loadPieOptions: any;
 
   ngOnInit(): void {
     this.loadBar();
-    this.loadBar2();
+    this.loadPie();
   }
 
   private loadBar(): void {
@@ -33,19 +34,37 @@ export class AppComponent implements OnInit {
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
     this.loadBarData = {
-      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
         {
-          label: 'Sales',
-          data: [540, 325, 702, 620],
-          backgroundColor: ['rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)'],
-          borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)'],
-          borderWidth: 1
+          type: 'line',
+          label: 'Dataset 1',
+          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          borderWidth: 2,
+          fill: false,
+          tension: 0.4,
+          data: [50, 25, 12, 48, 56, 76, 42]
+        },
+        {
+          type: 'bar',
+          label: 'Dataset 2',
+          backgroundColor: documentStyle.getPropertyValue('--green-500'),
+          data: [21, 84, 24, 75, 37, 65, 34],
+          borderColor: 'white',
+          borderWidth: 2
+        },
+        {
+          type: 'bar',
+          label: 'Dataset 3',
+          backgroundColor: documentStyle.getPropertyValue('--orange-500'),
+          data: [41, 52, 24, 74, 23, 21, 32]
         }
       ]
     };
 
     this.loadBarOptions = {
+      maintainAspectRatio: false,
+      aspectRatio: 0.6,
       plugins: {
         legend: {
           labels: {
@@ -54,86 +73,49 @@ export class AppComponent implements OnInit {
         }
       },
       scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            color: textColorSecondary
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false
-          }
-        },
         x: {
           ticks: {
             color: textColorSecondary
           },
           grid: {
-            color: surfaceBorder,
-            drawBorder: false
+            color: surfaceBorder
+          }
+        },
+        y: {
+          ticks: {
+            color: textColorSecondary
+          },
+          grid: {
+            color: surfaceBorder
           }
         }
       }
     };
   }
 
-  private loadBar2(): void {
+  private loadPie(): void {
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
-    const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-    const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
-    this.loadBar2Data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    this.loadPieData = {
+      labels: ['A', 'B', 'C'],
       datasets: [
         {
-          label: 'My First dataset',
-          backgroundColor: documentStyle.getPropertyValue('--blue-500'),
-          borderColor: documentStyle.getPropertyValue('--blue-500'),
-          data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label: 'My Second dataset',
-          backgroundColor: documentStyle.getPropertyValue('--pink-500'),
-          borderColor: documentStyle.getPropertyValue('--pink-500'),
-          data: [28, 48, 40, 19, 86, 27, 90]
+          data: [540, 325, 702],
+          backgroundColor: [documentStyle.getPropertyValue('--blue-500'), documentStyle.getPropertyValue('--yellow-500'), documentStyle.getPropertyValue('--green-500')],
+          hoverBackgroundColor: [documentStyle.getPropertyValue('--blue-400'), documentStyle.getPropertyValue('--yellow-400'), documentStyle.getPropertyValue('--green-400')]
         }
       ]
     };
 
-    this.loadBar2Options = {
-      maintainAspectRatio: false,
-      aspectRatio: 0.8,
+    this.loadPieOptions = {
       plugins: {
         legend: {
           labels: {
+            usePointStyle: true,
             color: textColor
           }
         }
-      },
-      scales: {
-        x: {
-          ticks: {
-            color: textColorSecondary,
-            font: {
-              weight: 500
-            }
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false
-          }
-        },
-        y: {
-          ticks: {
-            color: textColorSecondary
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false
-          }
-        }
-
       }
     };
   }
@@ -193,5 +175,6 @@ export class AppComponent implements OnInit {
       ]
     }
   }
+
 
 }

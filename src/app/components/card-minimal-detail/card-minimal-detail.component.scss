@@ -14,7 +14,11 @@
     padding: 0 1.25rem;
   }
   .pi-rounded-opacity {
-    padding: 0.85rem;
-    border-radius: 1.5rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
