@@ -11,55 +11,49 @@
   <div class="col-12 lg:col-3 md:col-6">
     <app-card-minimal-detail [options]="optionItem4"></app-card-minimal-detail>
   </div>
-  <div class="col-12 grid">
-    <div class="col-12 lg:col-8">
-      <p-accordion [activeIndex]="0">
-        <p-accordionTab header="Sales">
-          <p-chart
-            type="line"
-            [data]="loadBarData"
-            [options]="loadBarOptions"
-          />
-        </p-accordionTab>
-      </p-accordion>
-    </div>
-    <div class="col-12 lg:col-4">
-      <p-accordion [activeIndex]="0">
-        <p-accordionTab header="Order status">
-          <p-chart
-            class="flex justify-content-center"
-            type="pie"
-            [data]="loadPieData"
-            [options]="loadPieOptions"
-          />
-        </p-accordionTab>
-      </p-accordion>
-      <p-accordion [activeIndex]="0">
-        <p-accordionTab header="Sales detail">
-          <div class="progress-bar">
-            <p-progressBar [value]="50">
-              <ng-template pTemplate="content" let-value>
-                <span>{{ value }}/100 - Tasks </span>
-              </ng-template>
-            </p-progressBar>
-          </div>
-          <div class="progress-bar mt-2">
-            <p-progressBar [value]="80">
-              <ng-template pTemplate="content" let-value>
-                <span>{{ value }}/100 - Attended</span>
-              </ng-template>
-            </p-progressBar>
-          </div>
-          <div class="progress-bar mt-2">
-            <p-progressBar [value]="50">
-              <ng-template pTemplate="content" let-value>
-                <span>{{ value }}/100 - Rejects</span>
-              </ng-template>
-            </p-progressBar>
-          </div>
-        </p-accordionTab>
-      </p-accordion>
-    </div>
+  <div class="col-12 lg:col-8">
+    <p-accordion [activeIndex]="0">
+      <p-accordionTab header="Sales">
+        <p-chart type="line" [data]="loadBarData" [options]="loadBarOptions" />
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+  <div class="col-12 lg:col-4">
+    <p-accordion [activeIndex]="0">
+      <p-accordionTab header="Order status">
+        <p-chart
+          class="flex justify-content-center"
+          type="pie"
+          [data]="loadPieData"
+          [options]="loadPieOptions"
+        />
+      </p-accordionTab>
+    </p-accordion>
+    <p-accordion [activeIndex]="0">
+      <p-accordionTab header="Sales detail">
+        <div class="progress-bar">
+          <p-progressBar [value]="50">
+            <ng-template pTemplate="content" let-value>
+              <span>{{ value }}/100 - Tasks </span>
+            </ng-template>
+          </p-progressBar>
+        </div>
+        <div class="progress-bar mt-2">
+          <p-progressBar [value]="80">
+            <ng-template pTemplate="content" let-value>
+              <span>{{ value }}/100 - Attended</span>
+            </ng-template>
+          </p-progressBar>
+        </div>
+        <div class="progress-bar mt-2">
+          <p-progressBar [value]="50">
+            <ng-template pTemplate="content" let-value>
+              <span>{{ value }}/100 - Rejects</span>
+            </ng-template>
+          </p-progressBar>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
   </div>
   <div class="col-12">
     <app-table></app-table>
