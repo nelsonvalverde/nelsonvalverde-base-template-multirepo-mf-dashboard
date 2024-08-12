@@ -3,13 +3,14 @@ import { AccordionModule } from 'primeng/accordion';
 import { ChartModule } from 'primeng/chart';
 import { PanelModule } from 'primeng/panel';
 import { MenuModule } from 'primeng/menu';
+import { ProgressBarModule } from 'primeng/progressbar';
 import { CardMinimalDetailComponent } from "./components/card-minimal-detail/card-minimal-detail.component";
 import { CardMinimalDetailInterface } from './components/card-minimal-detail/card.minimal-detail.interface';
 import { TableComponent } from "./components/table/table.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AccordionModule, ChartModule, PanelModule, MenuModule, CardMinimalDetailComponent, TableComponent],
+  imports: [AccordionModule, ChartModule, PanelModule, MenuModule, ProgressBarModule ,CardMinimalDetailComponent, TableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

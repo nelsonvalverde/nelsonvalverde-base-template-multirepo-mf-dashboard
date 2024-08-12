@@ -9,9 +9,9 @@ dataKey="id"
 [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
 >
 <ng-template pTemplate="caption">
-    <div class="flex">
+    <div class="flex flex-wrap gap-3">
         <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" (onClick)="clear(dt1)" />
-        <span class="p-input-icon-left ml-auto">
+        <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input pInputText type="text" [(ngModel)]="searchValue" (input)="dt1.filterGlobal(searchValue, 'contains')" placeholder="Search keyword" />
         </span>
