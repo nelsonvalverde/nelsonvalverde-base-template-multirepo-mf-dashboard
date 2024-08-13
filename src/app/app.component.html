@@ -29,31 +29,33 @@
         />
       </p-accordionTab>
     </p-accordion>
-    <p-accordion [activeIndex]="0">
-      <p-accordionTab header="Sales detail">
-        <div class="progress-bar">
-          <p-progressBar [value]="50">
-            <ng-template pTemplate="content" let-value>
-              <span>{{ value }}/100 - Tasks </span>
-            </ng-template>
-          </p-progressBar>
-        </div>
-        <div class="progress-bar mt-2">
-          <p-progressBar [value]="80">
-            <ng-template pTemplate="content" let-value>
-              <span>{{ value }}/100 - Attended</span>
-            </ng-template>
-          </p-progressBar>
-        </div>
-        <div class="progress-bar mt-2">
-          <p-progressBar [value]="50">
-            <ng-template pTemplate="content" let-value>
-              <span>{{ value }}/100 - Rejects</span>
-            </ng-template>
-          </p-progressBar>
-        </div>
-      </p-accordionTab>
-    </p-accordion>
+    <div class="mt-2 pt-1">
+      <p-accordion [activeIndex]="0">
+        <p-accordionTab header="Sales detail">
+          <div class="progress-bar">
+            <p-progressBar [value]="50">
+              <ng-template pTemplate="content" let-value>
+                <span>{{ value }}/100 - Tasks </span>
+              </ng-template>
+            </p-progressBar>
+          </div>
+          <div class="progress-bar mt-2">
+            <p-progressBar [value]="80">
+              <ng-template pTemplate="content" let-value>
+                <span>{{ value }}/100 - Attended</span>
+              </ng-template>
+            </p-progressBar>
+          </div>
+          <div class="progress-bar mt-2">
+            <p-progressBar [value]="50">
+              <ng-template pTemplate="content" let-value>
+                <span>{{ value }}/100 - Rejects</span>
+              </ng-template>
+            </p-progressBar>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
   </div>
   <div class="col-12">
     <app-table></app-table>
