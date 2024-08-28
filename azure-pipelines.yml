@@ -18,12 +18,12 @@ steps:
 - script: npm install
   displayName: 'install dependencies'
 
-- script: npm run build --production 
+- script: npm run build --production
   displayName: 'build'
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'dist/shell'
+    rootFolderOrFile: 'dist/dashboard'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
