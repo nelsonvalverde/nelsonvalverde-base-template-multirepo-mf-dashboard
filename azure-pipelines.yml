@@ -31,7 +31,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'dist/dashboard'
+    rootFolderOrFile: 'dist/mf-dashboard'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
