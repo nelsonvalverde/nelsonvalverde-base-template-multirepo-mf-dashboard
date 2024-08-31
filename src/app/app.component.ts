@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 import { ChartModule } from 'primeng/chart';
 import { PanelModule } from 'primeng/panel';
@@ -12,8 +12,7 @@ import { TableComponent } from "./components/table/table.component";
   standalone: true,
   imports: [AccordionModule, ChartModule, PanelModule, MenuModule, ProgressBarModule ,CardMinimalDetailComponent, TableComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
 

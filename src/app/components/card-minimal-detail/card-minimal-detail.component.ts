@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
 import { CardMinimalDetailInterface } from './card.minimal-detail.interface';
@@ -12,8 +12,7 @@ import { ConvertUtil } from '../../shared/utils/convert.util';
   standalone: true,
   imports: [CardModule, MenuModule, CommonModule],
   templateUrl: './card-minimal-detail.component.html',
-  styleUrl: './card-minimal-detail.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './card-minimal-detail.component.scss'
 })
 
 export class CardMinimalDetailComponent {

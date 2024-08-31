@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { SliderModule } from 'primeng/slider';
@@ -15,8 +15,7 @@ import { InputTextModule } from 'primeng/inputtext';
   standalone: true,
   imports: [TagModule, ProgressBarModule, CommonModule, TableModule, SliderModule, FormsModule, DropdownModule, MultiSelectModule, ButtonModule, InputTextModule],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './table.component.scss'
 })
 export class TableComponent {
   customers = [
